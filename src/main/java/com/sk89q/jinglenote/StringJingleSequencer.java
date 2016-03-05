@@ -107,7 +107,7 @@ public class StringJingleSequencer implements JingleSequencer {
                 }
 
                 if (skip) {
-                    musicKeys.add(new Note(Instrument.PIANO, (byte) 0, 0));
+                    musicKeys.add(new Note(Instrument.HARP, (byte) 0, 0));
                     if (octave == 0) {
                         octave = 10;
                     }
@@ -209,19 +209,19 @@ public class StringJingleSequencer implements JingleSequencer {
 
         switch (instrument) {
             case 1:
-                return Instrument.BASS_GUITAR;
+                return Instrument.BASEDRUM;
             case 2:
-                return Instrument.SNARE_DRUM;
-            case 3:
-                return Instrument.STICKS;
-            case 4:
-                return Instrument.BASS_DRUM;
-            case 5:
-                return Instrument.GUITAR;
-            case 6:
                 return Instrument.BASS;
+            case 3:
+                return Instrument.HARP;
+            case 4:
+                return Instrument.HAT;
+            case 5:
+                return Instrument.PLING;
+            case 6:
+                return Instrument.SNARE;
             default:
-                return Instrument.PIANO;
+                return Instrument.BASEDRUM;
         }
     }
 

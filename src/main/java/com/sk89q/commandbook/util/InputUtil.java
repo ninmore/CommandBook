@@ -19,6 +19,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.sk89q.commandbook.util.entity.player.PlayerUtil.checkPlayer;
+import org.bukkit.Material;
 
 public class InputUtil {
 
@@ -569,7 +570,8 @@ public class InputUtil {
                     CommandBook.inst().checkPermission(source, "commandbook.locations.target");
                     Player player = checkPlayer(source);
                     Location playerLoc = player.getLocation();
-                    Block targetBlock = player.getTargetBlock(null, 100);
+                    @SuppressWarnings("deprecation")
+                    Block targetBlock = player.getTargetBlock((Set<Material>) null, 100);
 
                     if (targetBlock == null) {
                         throw new CommandException("Failed to find a block in your target!");

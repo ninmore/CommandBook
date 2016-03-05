@@ -48,6 +48,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
+import org.bukkit.Material;
 
 @ComponentInformation(friendlyName = "Thor", desc = "Thor's hammer and other lightning effects.")
 @Depend(components = SessionComponent.class)
@@ -86,7 +87,8 @@ public class ThorComponent extends BukkitComponent implements Listener {
             }
 
             if (event.getAction() == Action.LEFT_CLICK_AIR) {
-                Block block = player.getTargetBlock(null, 300);
+                @SuppressWarnings("deprecation")
+                Block block = player.getTargetBlock((Set<Material>) null, 0);
                 if (block != null) {
                     player.getWorld().strikeLightning(block.getLocation());
                 }

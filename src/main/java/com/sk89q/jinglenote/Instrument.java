@@ -19,11 +19,10 @@
 package com.sk89q.jinglenote;
 
 public enum Instrument {
-    GUITAR,
-    PIANO,
+    BASEDRUM,
     BASS,
-    BASS_GUITAR,
-    STICKS,
-    BASS_DRUM,
-    SNARE_DRUM;
+    HARP,
+    HAT,
+    PLING,
+    SNARE;
 }
